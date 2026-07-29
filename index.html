@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A formal, professional landing page for Cneeruko."
+    />
+    <title>Cneeruko</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Work+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#home" aria-label="Cneeruko home">
+          <span class="brand-mark">C</span>
+          <span class="brand-text">Cneeruko</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="#services">Services</a>
+          <a href="#approach">Approach</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main id="home">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Professional digital presence</p>
+            <h1>Clear, credible, and modern presentation for the Cneeruko brand.</h1>
+            <p class="lede">
+              A streamlined landing page designed for clarity and trust, with a
+              formal aesthetic that feels polished on desktop and mobile.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#contact">Start a conversation</a>
+              <a class="button button-secondary" href="#services">Explore services</a>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Highlights">
+            <div class="panel-card accent">
+              <span class="panel-label">Positioning</span>
+              <strong>Focused, refined, and easy to trust.</strong>
+              <p>
+                A concise experience that communicates value without visual noise.
+              </p>
+            </div>
+            <div class="panel-card">
+              <span class="panel-label">Experience</span>
+              <strong>Simple structure with premium presentation.</strong>
+              <p>
+                Built to feel confident, organized, and ready for a GitHub Pages
+                launch.
+              </p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="stats" aria-label="Key qualities">
+          <div>
+            <span>01</span>
+            <p>Minimal layout hierarchy</p>
+          </div>
+          <div>
+            <span>02</span>
+            <p>Professional tone and typography</p>
+          </div>
+          <div>
+            <span>03</span>
+            <p>Responsive GitHub Pages ready</p>
+          </div>
+        </section>
+
+        <section class="content-grid" id="services">
+          <article class="section-card">
+            <p class="section-kicker">Services</p>
+            <h2>A compact homepage that communicates the essentials.</h2>
+            <p>
+              The page is intentionally simple: a refined hero, supporting
+              credibility blocks, and a direct call to action. It is suitable for
+              a company profile, small business, or personal professional brand.
+            </p>
+          </article>
+
+          <article class="section-card" id="approach">
+            <p class="section-kicker">Approach</p>
+            <h2>Calm spacing, disciplined colors, and strong contrast.</h2>
+            <p>
+              The visual language leans formal rather than playful, using a deep
+              neutral palette, restrained motion, and clear type hierarchy.
+            </p>
+          </article>
+        </section>
+
+        <section class="process" aria-label="How it works">
+          <div class="process-heading">
+            <p class="section-kicker">Structure</p>
+            <h2>Designed to be easy to maintain and easy to publish.</h2>
+          </div>
+          <div class="process-steps">
+            <div class="step">
+              <span>01</span>
+              <h3>Review</h3>
+              <p>Adjust the copy, title, and contact details to match the brand.</p>
+            </div>
+            <div class="step">
+              <span>02</span>
+              <h3>Deploy</h3>
+              <p>Push the files to a GitHub Pages repository or `gh-pages` branch.</p>
+            </div>
+            <div class="step">
+              <span>03</span>
+              <h3>Share</h3>
+              <p>Publish the site as a clean public landing page for the user.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact" id="contact">
+          <div>
+            <p class="section-kicker">Contact</p>
+            <h2>Ready for the next step.</h2>
+            <p>
+              Replace this section with the user’s preferred email, calendar link,
+              or business contact details before publishing.
+            </p>
+          </div>
+          <a class="button button-primary" href="#home">Back to top</a>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>© <span id="year"></span> Cneeruko. Built for a professional GitHub Pages launch.</p>
+      </footer>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
