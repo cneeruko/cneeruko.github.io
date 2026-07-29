@@ -1,13 +1,11 @@
 :root {
   --bg: #08101d;
-  --bg-soft: #11182a;
   --panel: rgba(15, 22, 37, 0.9);
   --panel-strong: rgba(21, 31, 49, 0.96);
   --text: #f5f2eb;
   --muted: rgba(245, 242, 235, 0.72);
   --line: rgba(255, 255, 255, 0.12);
   --accent: #d8b36a;
-  --accent-soft: rgba(216, 179, 106, 0.16);
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
 }
 
@@ -48,7 +46,7 @@ a {
 }
 
 .page-shell {
-  width: min(1140px, calc(100% - 32px));
+  width: min(1160px, calc(100% - 32px));
   margin: 0 auto;
   padding: 24px 0 28px;
 }
@@ -80,10 +78,6 @@ a {
   color: var(--accent);
 }
 
-.brand-text {
-  font-size: 1rem;
-}
-
 .nav {
   display: flex;
   gap: 16px;
@@ -93,7 +87,9 @@ a {
 }
 
 .nav a,
-.button {
+.button,
+.patent-card,
+.contact-link {
   transition:
     transform 180ms ease,
     background-color 180ms ease,
@@ -102,7 +98,9 @@ a {
 }
 
 .nav a:hover,
-.button:hover {
+.button:hover,
+.patent-card:hover,
+.contact-link:hover {
   transform: translateY(-1px);
 }
 
@@ -112,7 +110,8 @@ a {
 .profile-card,
 .resume-card,
 .timeline-item,
-.stats > div {
+.stats > div,
+.resume-section {
   border: 1px solid var(--line);
   background: var(--panel);
   box-shadow: var(--shadow);
@@ -165,14 +164,15 @@ a {
 .timeline-item p,
 .contact p,
 .profile-card p,
-.resume-card p,
-.list-block p {
+.list-block p,
+.section-intro,
+.source-link {
   color: var(--muted);
   line-height: 1.7;
 }
 
 .lede {
-  max-width: 60ch;
+  max-width: 63ch;
   font-size: 1.06rem;
   margin: 18px 0 0;
 }
@@ -310,35 +310,12 @@ a {
 .resume-section {
   margin-top: 16px;
   padding: 28px;
-  border: 1px solid var(--line);
+  border-radius: 24px;
   background: rgba(12, 18, 32, 0.74);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(14px);
 }
 
-.resume-cards {
-  display: grid;
-  gap: 16px;
-}
-
-.resume-cards.three-up {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.resume-card {
-  padding: 22px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.resume-card h3,
-.timeline-item h3,
-.list-block h3 {
-  margin: 0 0 10px;
-  font-size: 1.05rem;
-}
-
-.timeline {
+.timeline,
+.list-block {
   display: grid;
   gap: 16px;
 }
@@ -365,13 +342,81 @@ a {
   text-transform: uppercase;
 }
 
-.split-section {
-  margin-top: 16px;
+.timeline-item h3,
+.list-block h3,
+.skills-group h3 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
 }
 
-.list-block {
+.bullet-list,
+.pill-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.bullet-list li + li,
+.pill-list li + li {
+  margin-top: 8px;
+}
+
+.patent-grid {
   display: grid;
-  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.patent-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.patent-card span {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.patent-card strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.source-link {
+  margin: 14px 0 0;
+}
+
+.source-link a,
+.contact-link {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.skills-group + .skills-group {
+  margin-top: 18px;
+}
+
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.pill-list li {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .list-block > div {
@@ -392,8 +437,23 @@ a {
   padding: 28px;
 }
 
-.contact p {
-  max-width: 58ch;
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.contact-link {
+  display: inline-flex;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.contact-meta {
+  margin-top: 14px;
 }
 
 .footer {
@@ -403,11 +463,16 @@ a {
   text-align: center;
 }
 
+@media (max-width: 1080px) {
+  .patent-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 980px) {
   .hero,
   .content-grid,
   .split-section,
-  .resume-cards.three-up,
   .stats,
   .contact {
     grid-template-columns: 1fr;
@@ -428,7 +493,7 @@ a {
 
 @media (max-width: 640px) {
   .page-shell {
-    width: min(100% - 20px, 1140px);
+    width: min(100% - 20px, 1160px);
     padding-top: 10px;
   }
 
@@ -442,5 +507,9 @@ a {
 
   .hero-actions {
     flex-direction: column;
+  }
+
+  .patent-grid {
+    grid-template-columns: 1fr;
   }
 }
